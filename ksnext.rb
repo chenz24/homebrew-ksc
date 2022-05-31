@@ -5,11 +5,11 @@
 class Ksnext < Formula
   desc ""
   homepage "https://github.com/chenz24/ksnext"
-  version "0.0.1-alpha3"
+  version "0.0.1-alpha4"
 
   on_macos do
-    url "https://github.com/chenz24/ksnext/releases/download/v0.0.1-alpha3/ksnext_0.0.1-alpha3_darwin_all.tar.gz"
-    sha256 "beffb03ab5397251de1223e36babb6f0f4a152d65b7fffb5babe14ed5a93379a"
+    url "https://github.com/chenz24/ksnext/releases/download/v0.0.1-alpha4/ksnext_0.0.1-alpha4_darwin_all.tar.gz"
+    sha256 "ea07fc0ae6e74131512eba570844fd62e6def89416bf761896ad0f56bacf3c94"
 
     def install
       bin.install "ksnext"
@@ -17,17 +17,17 @@ class Ksnext < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/chenz24/ksnext/releases/download/v0.0.1-alpha3/ksnext_0.0.1-alpha3_linux_arm64.tar.gz"
-      sha256 "810148075fb031c19ee17600cfd86bf411968435c4c16b7acfcfb4baf39b804f"
+    if Hardware::CPU.intel?
+      url "https://github.com/chenz24/ksnext/releases/download/v0.0.1-alpha4/ksnext_0.0.1-alpha4_linux_amd64.tar.gz"
+      sha256 "3519ea18e73b29792ca02b3cda88c62a4bd8ce5e8ea258c0b4576edcbb8f5751"
 
       def install
         bin.install "ksnext"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/chenz24/ksnext/releases/download/v0.0.1-alpha3/ksnext_0.0.1-alpha3_linux_amd64.tar.gz"
-      sha256 "e0cc255f24d0458a2a1b3cb426a16b294c948ea1f57b211a3e6f64fdbf0dae60"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/chenz24/ksnext/releases/download/v0.0.1-alpha4/ksnext_0.0.1-alpha4_linux_arm64.tar.gz"
+      sha256 "0bc037293e9e9bd483bef242eded34486c2acf0f2a45a96ce00e67d7e37a3361"
 
       def install
         bin.install "ksnext"
